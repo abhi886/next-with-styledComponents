@@ -2,7 +2,7 @@ import styled from "styled-components";
 const Title = styled.h1`
   font-size: 1.5em;
   text-align: center;
-  color: palevioletred;
+  color: ${(props) => (props.palevioletred ? "palevioletred" : "red")};
 `;
 
 const Wrapper = styled.section`
@@ -13,7 +13,7 @@ const Wrapper = styled.section`
 const HelloWorld = () => {
   return (
     <Wrapper>
-      <Title>Hello World!</Title>
+      <Title palevioletred>Hello World!</Title>
     </Wrapper>
   );
 };
