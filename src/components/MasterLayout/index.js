@@ -1,11 +1,12 @@
-import Header from "../HeaderSection/index";
-import Footer from "../FooterSection/index";
 import React from "react";
+import Navbar from "../Navbar/Navbar";
+import Footer from "../Footer";
 
 const MasterLayout = ({ children }) => {
   return (
     <React.Fragment>
-      <Header />
+      {" "}
+      <Navbar />
       {children}
       <Footer />
     </React.Fragment>
