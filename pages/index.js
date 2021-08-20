@@ -1,6 +1,7 @@
 import Head from "next/head";
-import HelloWorld from "../src/components/helloWorld";
+import MasterLayout from "../src/components/MasterLayout";
+import Main from "../src/components/Main";
 
 export default function Home() {
-  return <HelloWorld></HelloWorld>;
+  return <Main></Main>;
 }
