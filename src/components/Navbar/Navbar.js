@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import logo from "../../../public/logo.png";
 import styled from "styled-components";
 
@@ -23,12 +24,25 @@ const Navbar = () => {
         <span></span>
       </Hamburger>
       <Menu isOpen={isOpen}>
-        <MenuLink href='/'> Home </MenuLink>
-        <MenuLink href='/about'> About Me</MenuLink>
-        <MenuLink href='/service'> Services</MenuLink>
-        <MenuLink href='/portfolio'> Portfolio</MenuLink>
-        <MenuLink href='/contact'> Contact</MenuLink>
-        <MenuLink href='/blogs'> Blogs</MenuLink>
+        <Link href={"/"} passHref>
+          <MenuLink> Home </MenuLink>
+        </Link>
+        <Link href={"/about"} passHref>
+          <MenuLink> About Me </MenuLink>
+        </Link>
+        <Link href={"/service"} passHref>
+          <MenuLink> Services </MenuLink>
+        </Link>
+
+        <Link href={"/portfolio"} passHref>
+          <MenuLink> Portfolio</MenuLink>
+        </Link>
+        <Link href={"/contact"} passHref>
+          <MenuLink> Contact</MenuLink>
+        </Link>
+        <Link href={"/blogs"} passHref>
+          <MenuLink> Blogs</MenuLink>
+        </Link>
       </Menu>
     </Nav>
   );
