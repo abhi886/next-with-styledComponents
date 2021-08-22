@@ -1,44 +1,48 @@
 import { useRouter } from "next/router";
+import Link from "next/link";
+import { useState } from "react";
 import styled from "styled-components";
 
-function ActiveLink({ children, href }) {
+function ActiveLink({ children, href, linkClick }) {
   const router = useRouter();
   const style = {
-    // marginRight: 10,
-    borderTop:
+    textColor: router.asPath === href ? "var(--primary-orange)" : "",
+    borderBottom:
       router.asPath === href ? "0.1875rem solid var(--primary-orange)" : "",
-    marginTop: 10,
   };
-
-  const handleClick = (e) => {
-    e.preventDefault();
-    router.push(href);
-  };
-
   return (
-    <MenuLink href={href} onClick={handleClick} style={style}>
-      {children}
+    <MenuLink onClick={linkClick} style={style}>
+      <Link href={href}>{children}</Link>
     </MenuLink>
   );
 }
 
-const MenuLink = styled.a`
-  padding: 1rem 2rem;
+const MenuLink = styled.div`
   cursor: pointer;
+  padding: 1rem 2rem;
   text-align: center;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: black;
-  transition: all 0.3s ease-in;
-  font-size: 0.9 rem;
-  font-weight: 900;
   &:hover {
-    border-top: 0.1875rem solid var(--primary-orange);
-    margin-top: 8px;
+    border: 1px solid var(--primary-orange);
   }
+  &:focus {
+    color: var(--primary-orange);
+  }
+  a {
+    text-decoration: none;
 
-  @media (max-width: 768px) {
-    display: flex;
+    text-transform: uppercase;
+
+    color: black;
+    transition: all 0.2s ease-in-out;
+    font-size: 0.9 rem;
+    font-weight: 900;
+    &:hover {
+      color: 1px solid var(--primary-orange);
+    }
+
+    @media (max-width: 768px) {
+      display: flex;
+    }
   }
 `;
 export default ActiveLink;
