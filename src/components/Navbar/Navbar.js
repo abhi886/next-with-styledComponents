@@ -1,17 +1,27 @@
 import { useState } from "react";
+import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
 import logo from "../../../public/logo.png";
 import styled from "styled-components";
+import ActiveLink from "../shared/ActiveLink";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
+  const handleClick = (e) => {
+    e.preventDefault();
+    router.push(href);
+  };
+
   return (
     <Nav>
-      <Logo href='/'>
-        <Image width={75} height={65} src={logo} alt='Picture of the logo' />{" "}
+      <Link href='/'>
+        <a>
+          <Image width={75} height={65} src={logo} alt='Picture of the logo' />{" "}
+        </a>
         {/* <span>Codes</span> */}
-      </Logo>
+      </Link>
 
       <Hamburger
         onClick={() => {
@@ -24,14 +34,14 @@ const Navbar = () => {
         <span></span>
       </Hamburger>
       <Menu isOpen={isOpen}>
-        <Link href={"/"} passHref>
-          <MenuLink> Home </MenuLink>
-        </Link>
-        <Link href={"/about"} passHref>
-          <MenuLink> About Me </MenuLink>
-        </Link>
-        <Link href={"/service"} passHref>
-          <MenuLink> Services </MenuLink>
+        <ActiveLink href={"/"}>Home</ActiveLink>
+        <ActiveLink href={"/about"}>About Me</ActiveLink>
+        <ActiveLink href={"/service"}>Services</ActiveLink>
+        <ActiveLink href={"/portfolio"}>Portfolio</ActiveLink>
+        <ActiveLink href={"/contact"}>Contact </ActiveLink>
+        <ActiveLink href={"/blogs"}>Blogs</ActiveLink>
+        {/* <Link href={"/service"} passHref>
+          <MenuLink onClick={handleClick}> Services </MenuLink>
         </Link>
 
         <Link href={"/portfolio"} passHref>
@@ -42,7 +52,7 @@ const Navbar = () => {
         </Link>
         <Link href={"/blogs"} passHref>
           <MenuLink> Blogs</MenuLink>
-        </Link>
+        </Link> */}
       </Menu>
     </Nav>
   );
