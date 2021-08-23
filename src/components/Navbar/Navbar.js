@@ -5,7 +5,7 @@ import styled from "styled-components";
 import ActiveLink from "../shared/ActiveLink";
 import Logo from "../shared/logo";
 
-const Nav = styled.div`
+const NavContainer = styled.div`
   position: fixed;
   right: 0;
   left: 0;
@@ -57,10 +57,11 @@ const Navbar = () => {
   const linksCounter = [
     { id: 1, href: "/", value: "Home" },
     { id: 2, href: "/about", value: "About" },
-    { id: 3, href: "/service", value: "Service" },
-    { id: 4, href: "/portfolio", value: "Portfolio" },
-    { id: 5, href: "/contact", value: "Contact" },
-    { id: 6, href: "/blogs", value: "Blog" },
+    { id: 3, href: "/experience", value: "Experience" },
+    { id: 4, href: "/service", value: "Service" },
+    { id: 5, href: "/portfolio", value: "Portfolio" },
+    { id: 6, href: "/contact", value: "Contact" },
+    { id: 7, href: "/blogs", value: "Blog" },
   ];
 
   const handleClick = () => {
@@ -68,7 +69,7 @@ const Navbar = () => {
   };
 
   return (
-    <Nav>
+    <NavContainer>
       <Logo></Logo>
       <Hamburger
         onClick={() => {
@@ -87,7 +88,7 @@ const Navbar = () => {
           </ActiveLink>
         ))}
       </Menu>
-    </Nav>
+    </NavContainer>
   );
 };
 

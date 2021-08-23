@@ -1,5 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap");
-
+import { createGlobalStyle } from "styled-components";
+const GlobalStyle = createGlobalStyle`body {
+  background: #f2f2f2;
+  color: #333;
+  font-family: "Nunito";
+  margin: 0px auto;
+}
+*{
+  padding: 0;
+  margin:0;
+  box-sizing: border-box;
+}
 :root {
   --primary-white: #fff;
   --primary-orange: #f9ab00;
@@ -14,9 +24,5 @@
   --primary-green: green;
   --primary-black: #000;
 }
-body {
-  background: #f2f2f2;
-  color: #333;
-  font-family: "Nunito";
-  margin: 0px auto;
-}
+`;
+export default GlobalStyle;
