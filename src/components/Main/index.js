@@ -1,17 +1,11 @@
 import Header from "../Header/header";
+import Link from "next/link";
 import Blog from "../../../src/components/Blogs/blog";
 import styled from "styled-components";
 import { Container } from "react-bootstrap";
 import Button from "../shared/TestButton";
 
-const BlogPageHeading = styled.h2`
-  color: var(--primary-orange);
-  font-weight: 600;
-  text-align: center;
-  text-transform: uppercase;
-`;
-
-const BlogMain = styled.div`
+const BlogMain = styled.section`
   background-blend-mode: darken;
   background-color: #faf8f2;
   width: 100%;
@@ -22,18 +16,37 @@ const BlogConatiner = styled(Container)`
   position: relative;
   background-color: White;
 `;
+const BlogPageHeading = styled.h2`
+  color: var(--primary-orange);
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  padding-top: 31px;
+`;
 
-const Main = () => {
+const ViewAllButtonDiv = styled.div`
+  display: flex;
+`;
+// const ViewAllButton = styled(Button)``;
+const Main = ({ blog }) => {
   return (
     <>
       <Header></Header>
       <BlogMain>
         <BlogConatiner>
           <BlogPageHeading>My Latest Blogs</BlogPageHeading>
-          <Blog></Blog>
-          <Button bgColor='tomato' color='var(--primary-orange)'>
-            This is button Test
-          </Button>
+          {blog.blogs.map((bl) => (
+            <Blog key={bl.id} blog={bl}></Blog>
+          ))}
+          <ViewAllButtonDiv>
+            <Button
+              color='var(--primary-orange)'
+              border='1px solid var(--primary-orange)'
+              marginTop='5px'
+            >
+              <Link href={"/blogs"}>View All</Link>
+            </Button>
+          </ViewAllButtonDiv>
         </BlogConatiner>
       </BlogMain>
     </>

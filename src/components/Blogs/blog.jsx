@@ -9,6 +9,7 @@ const BlogContent = styled.div`
   overflow: hidden;
   position: relative;
   cursor: pointer;
+  border-bottom: 0.3125rem solid var(--primary-orange);
 `;
 
 const BorderBox = styled.div`
@@ -43,7 +44,7 @@ const ListItem = styled.li`
 `;
 
 const BlogDescription = styled.p``;
-const Blog = () => {
+const Blog = ({ blog }) => {
   return (
     <BlogContent>
       <BorderBox>
@@ -54,21 +55,14 @@ const Blog = () => {
             </ImageBox>
           </Col>
           <Col md={8} lg={8}>
-            <BlogTitle>
-              You Dont Need To Remember Everythig to Code...
-            </BlogTitle>
+            <BlogTitle>{blog.blogTitle}</BlogTitle>
 
             <List>
-              <ListItem>Jun 25, 2021</ListItem>
-              <ListItem>( About 5 mins read )</ListItem>
+              <ListItem>{blog.publishedDate}</ListItem>
+              <ListItem>( About {blog.readTime} mins read )</ListItem>
             </List>
 
-            <BlogDescription>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Necessitatibus, magnam. Quasi dolore porro unde, ex at, ducimus
-              facere cumque sed, odit dolorum aliquam et adipisci blanditiis
-              autem incidunt. Velit, id?
-            </BlogDescription>
+            <BlogDescription>{blog.blogDescription}</BlogDescription>
           </Col>
         </Row>
       </BorderBox>
