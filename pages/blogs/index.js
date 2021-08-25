@@ -1,24 +1,29 @@
-import { experience } from "../../src/data/experience";
+import { blog } from "../../src/data/blog";
+// import { getTwoBlogs } from "../../src/lib/blog";
+import styled from "styled-components";
+import BlogContent from "../../src/components/Blogs/blog";
+import { Container } from "react-bootstrap";
 
-const Blog = (exp) => {
-  console.log(exp);
+const BlogMain = styled.div`
+  padding-top: 82px;
+`;
+const Blog = ({ blogs }) => {
   return (
-    <div>
-      <ul>
-        {exp.exp.map((ex) => (
-          <li key={ex.id}>{ex.id}</li>
+    <BlogMain>
+      <Container>
+        {blogs.map((b) => (
+          <BlogContent key={b.id} blog={b}></BlogContent>
         ))}
-      </ul>
-    </div>
+      </Container>
+    </BlogMain>
   );
 };
 
 export async function getStaticProps() {
-  const exp = experience;
-  console.log(experience);
+  const blogs = blog;
   return {
     props: {
-      exp,
+      blogs,
     },
   };
 }

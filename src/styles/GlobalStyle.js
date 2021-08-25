@@ -1,9 +1,14 @@
+<styles>
+  @import
+  url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;1,900&display=swap');
+</styles>;
 import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`body {
   background: #f2f2f2;
   color: #333;
-  font-family: "Nunito";
+  font-family: 'Roboto', sans-serif;
   margin: 0px auto;
+  
 }
 *{
   padding: 0;

@@ -26,6 +26,7 @@ const BlogPageHeading = styled.h2`
 
 const ViewAllButtonDiv = styled.div`
   display: flex;
+  justify-content: flex-end;
 `;
 // const ViewAllButton = styled(Button)``;
 const Main = ({ blog }) => {
