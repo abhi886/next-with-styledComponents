@@ -1,16 +1,21 @@
+import SingleBlog from "../../src/components/Blogs/singleBlog";
 import { getAllBlogIds, getBlogsData } from "../../src/lib/blog";
 import styled from "styled-components";
 
-const Abcd = styled.div`
-  padding-top: 150px;
-`;
 const Post = ({ blogData }) => {
-  console.log(blogData);
-  return <Abcd>{blogData.data}</Abcd>;
+  const data = blogData.result;
+  console.log(data);
+  return (
+    <>
+      {data.map((d) => (
+        <SingleBlog blog={d}></SingleBlog>
+      ))}
+    </>
+  );
 };
 
 export async function getStaticPaths() {
-  const paths = [{ params: { id: "1" } }, { params: { id: "2" } }];
+  const paths = getAllBlogIds();
   return {
     paths,
     fallback: false,
@@ -19,7 +24,6 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const blogData = await getBlogsData(params.id);
-  console.log(blogData);
   return {
     props: {
       blogData,

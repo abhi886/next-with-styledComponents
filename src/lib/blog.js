@@ -13,15 +13,12 @@ export function getTwoBlogs() {
 }
 
 export function getAllBlogIds() {
-  // let arr = [...blog];
-  // let BlogsIds = arr.map((ar) => ar.id).join;
-  const ids = [{ id: "1" }, { id: "2" }];
-  return ids;
+  const result = blogs.map((blog) => ({ params: { id: `${blog.id}` } }));
+
+  return result;
 }
 
 export function getBlogsData(id) {
-  // let arr = [...blog];
-  // let BlogsIds = arr.map((ar) => ar.id).join;
-  const data = "this is the content";
-  return { id, data };
+  const result = blogs.filter((blog) => blog.id == id);
+  return { id, result };
 }
