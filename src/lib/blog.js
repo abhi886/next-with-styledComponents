@@ -1,8 +1,14 @@
-import { blog } from "../../src/data/blog";
+import blogs from "../../src/data/blogs.json";
+
+export function getAllBlogs() {
+  let allBlogs = blogs;
+  // console.log(blogs);
+  return allBlogs;
+}
 
 export function getTwoBlogs() {
-  let arr = blog;
-  let twoBlogs = [...arr].slice(1, 3);
+  let twoBlogs = blogs.slice(0, 2);
+  // console.log(blogs);
   return twoBlogs;
 }
 

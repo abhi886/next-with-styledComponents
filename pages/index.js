@@ -4,6 +4,7 @@ import Main from "../src/components/Main";
 import { getTwoBlogs } from "../src/lib/blog";
 
 export default function Home(blogs) {
+  console.log(blogs);
   return <Main blog={blogs}></Main>;
 }
 
