@@ -57,7 +57,11 @@ const Blog = ({
             </ImageBox>
           </Col>
           <Col md={8} lg={8}>
-            <BlogTitle>{blogTitle}</BlogTitle>
+            <BlogTitle>
+              <Link href={`/blogs/${id}`}>
+                <a>{blogTitle}</a>
+              </Link>
+            </BlogTitle>
 
             <List>
               <ListItem>{publishedDate}</ListItem>
