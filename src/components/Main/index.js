@@ -29,15 +29,15 @@ const ViewAllButtonDiv = styled.div`
   justify-content: flex-end;
 `;
 // const ViewAllButton = styled(Button)``;
-const Main = ({ blog }) => {
+const Main = ({ blog: { blogs } }) => {
   return (
     <>
       <Header></Header>
       <BlogMain>
         <BlogConatiner>
           <BlogPageHeading>My Latest Blogs</BlogPageHeading>
-          {blog.blogs.map((bl) => (
-            <Blog key={bl.id} blog={bl}></Blog>
+          {blogs.map((bl) => (
+            <Blog key={bl.id} blogs={bl}></Blog>
           ))}
           <ViewAllButtonDiv>
             <Button

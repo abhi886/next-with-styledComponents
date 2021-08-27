@@ -47,6 +47,7 @@ const BlogDescription = styled.p``;
 const Blog = ({
   blogs: { id, blogTitle, publishedDate, readTime, blogDescription },
 }) => {
+  // console.log(blogs);
   return (
     <BlogContent>
       <BorderBox>

@@ -1,18 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 
-const ArticleDiv = styled.article`
-  padding-top: 200px;
+const SingleBlogHeading = styled.h1`
+  //   padding-top: 200px;
 `;
 
-const SingleBlog = ({ blog: { blogTitle } }) => {
+const SingleBlogParagraph = styled.p``;
+
+const SingleBlog = ({ blog: { blogTitle, blogDescription } }) => {
   return (
     <React.Fragment>
       {" "}
-      <ArticleDiv>
-        <h2>{blogTitle}</h2>
-        {/* <p>{blogDescription}</p> */}
-      </ArticleDiv>
+      <SingleBlogHeading>{blogTitle} </SingleBlogHeading>
+      <SingleBlogParagraph>{blogDescription}</SingleBlogParagraph>
     </React.Fragment>
   );
 };

@@ -1,16 +1,22 @@
 import SingleBlog from "../../src/components/Blogs/singleBlog";
 import { getAllBlogIds, getBlogsData } from "../../src/lib/blog";
+import { Container } from "react-bootstrap";
+
 import styled from "styled-components";
+
+const BlogDiv = styled(Container)`
+  padding-top: 139px;
+`;
 
 const Post = ({ blogData }) => {
   const data = blogData.result;
   console.log(data);
   return (
-    <>
+    <BlogDiv>
       {data.map((d) => (
-        <SingleBlog blog={d}></SingleBlog>
+        <SingleBlog key={d.id} blog={d}></SingleBlog>
       ))}
-    </>
+    </BlogDiv>
   );
 };
 
