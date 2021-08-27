@@ -8,11 +8,12 @@ const BlogMain = styled.div`
   padding-top: 82px;
 `;
 const Blog = ({ blogs }) => {
+  console.log(blogs);
   return (
     <BlogMain>
       <Container>
-        {blogs.map((b) => (
-          <BlogContent key={b.id} blog={b}></BlogContent>
+        {blogs.map((blog) => (
+          <BlogContent key={blog.id} blogs={blog}></BlogContent>
         ))}
       </Container>
     </BlogMain>

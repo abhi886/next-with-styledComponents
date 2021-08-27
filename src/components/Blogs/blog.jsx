@@ -44,7 +44,9 @@ const ListItem = styled.li`
 `;
 
 const BlogDescription = styled.p``;
-const Blog = ({ blog }) => {
+const Blog = ({
+  blogs: { id, blogTitle, publishedDate, readTime, blogDescription },
+}) => {
   return (
     <BlogContent>
       <BorderBox>
@@ -55,14 +57,14 @@ const Blog = ({ blog }) => {
             </ImageBox>
           </Col>
           <Col md={8} lg={8}>
-            <BlogTitle>{blog.blogTitle}</BlogTitle>
+            <BlogTitle>{blogTitle}</BlogTitle>
 
             <List>
-              <ListItem>{blog.publishedDate}</ListItem>
-              <ListItem>( About {blog.readTime} mins read )</ListItem>
+              <ListItem>{publishedDate}</ListItem>
+              <ListItem>( About {readTime} mins read )</ListItem>
             </List>
 
-            <BlogDescription>{blog.blogDescription}</BlogDescription>
+            <BlogDescription>{blogDescription}</BlogDescription>
           </Col>
         </Row>
       </BorderBox>
