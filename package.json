@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.13.2",
+    "contentful": "^8.5.0",
     "next": "^11.0.0",
     "react": "17.0.2",
     "react-bootstrap": "^1.6.1",

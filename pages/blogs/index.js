@@ -1,4 +1,5 @@
 // import { blog } from "../../src/data/blog";
+
 import { getAllBlogs } from "../../src/lib/blog";
 import styled from "styled-components";
 import BlogContent from "../../src/components/Blogs/blog";
