@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { Container } from "react-bootstrap";
 import { createClient } from "contentful";
 import Image from "next/image";
+import Link from "next/link";
+
 import Skeleton from "../../src/components/skeleton/skeleton";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
@@ -17,6 +19,8 @@ const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
   accessToken: process.env.CONTENTFUL_ACCESS_KEY,
 });
+
+const GoBack = styled.div``;
 
 export async function getStaticPaths() {
   const res = await client.getEntries({
@@ -79,6 +83,12 @@ const BlogDetails = ({ blogs }) => {
         <h3>Share Buttons:</h3>
         <div>{documentToReactComponents(blogDescription)}</div>
       </Method>
+      <GoBack>
+        {" "}
+        <Link href='/vlogs'>
+          <a>← Back to Blogs</a>
+        </Link>
+      </GoBack>
     </OpeningDiv>
   );
 };

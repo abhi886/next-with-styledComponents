@@ -61,7 +61,7 @@ const Navbar = () => {
     { id: 4, href: "/service", value: "Service" },
     { id: 5, href: "/portfolio", value: "Portfolio" },
     { id: 6, href: "/contact", value: "Contact" },
-    { id: 7, href: "/blogs", value: "Blog" },
+    { id: 7, href: "/vlogs", value: "Blog" },
   ];
 
   const handleClick = () => {

@@ -10,6 +10,7 @@ const VlogsContainer = styled(Container)`
 const SuperTitle = styled.div`
   text-transform: uppercase;
   text-decoration: underline;
+  font-weight: bold;
 `;
 
 export async function getStaticProps() {
@@ -30,7 +31,9 @@ export default function Vlogs({ vlogs }) {
   console.log(vlogs);
   return (
     <VlogsContainer>
-      <SuperTitle>My Recent blogs</SuperTitle>
+      <SuperTitle>
+        <h4>My Recent blogs</h4>
+      </SuperTitle>
       {vlogs.map((vl) => (
         <VlogCard key={vl.sys.id} vlog={vl}></VlogCard>
       ))}
