@@ -1,14 +1,11 @@
 import { createClient } from "contentful";
-import Head from "next/head";
-import MasterLayout from "../src/components/MasterLayout";
-import Main from "../src/components/Main";
-import { getTwoBlogs } from "../src/lib/blog";
 
-export default function Home({ vlogs }) {
-  // console.log(blogs);
-  return <Main vlogs={vlogs}></Main>;
-}
+const Test = ({ vlogs }) => {
+  //   const result = await getTwoBlogs();
+  console.log(vlogs);
 
+  return <p>Created For test purpose</p>;
+};
 export async function getStaticProps() {
   const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
@@ -23,3 +20,4 @@ export async function getStaticProps() {
     },
   };
 }
+export default Test;

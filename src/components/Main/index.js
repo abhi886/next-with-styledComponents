@@ -4,6 +4,7 @@ import Blog from "../../../src/components/Blogs/blog";
 import styled from "styled-components";
 import { Container } from "react-bootstrap";
 import Button from "../shared/TestButton";
+import VlogCard from "../../components/vlogs/vlogCard";
 
 const BlogMain = styled.section`
   background-blend-mode: darken;
@@ -29,23 +30,27 @@ const ViewAllButtonDiv = styled.div`
   justify-content: flex-end;
 `;
 // const ViewAllButton = styled(Button)``;
-const Main = ({ blog: { blogs } }) => {
+const Main = ({ vlogs }) => {
+  // console.log(vlogs);
+  const newBlogs = vlogs.filter((blog) => blog.fields.displayFrontPage == true);
   return (
     <>
       <Header></Header>
       <BlogMain>
         <BlogConatiner>
           <BlogPageHeading>My Latest Blogs</BlogPageHeading>
-          {blogs.map((bl) => (
-            <Blog key={bl.id} blogs={bl}></Blog>
+
+          {newBlogs.map((vl) => (
+            <VlogCard key={vl.sys.id} vlog={vl}></VlogCard>
           ))}
+
           <ViewAllButtonDiv>
             <Button
               color='var(--primary-orange)'
               border='1px solid var(--primary-orange)'
               marginTop='5px'
             >
-              <Link href={"/blogs"}>View All</Link>
+              <Link href={"/vlogs"}>View All</Link>
             </Button>
           </ViewAllButtonDiv>
         </BlogConatiner>
