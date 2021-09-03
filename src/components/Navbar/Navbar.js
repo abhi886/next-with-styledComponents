@@ -1,6 +1,7 @@
+import React, { useContext } from "react";
 import { useState, useEffect } from "react";
+import { ThemeContext } from "../../../pages/_app";
 import { useRouter } from "next/router";
-import React from "react";
 
 import styled from "styled-components";
 import ActiveLink from "../shared/ActiveLink";
@@ -17,7 +18,7 @@ const NavContainer = styled.div`
   justify-content: space-between;
   align-item: center;
   flex-wrap: wrap;
-  background: white;
+  background: ${({ darkTheme }) => (darkTheme === true ? "black" : "white")};
 `;
 const Hamburger = styled.div`
   flex-direction: column;
@@ -55,7 +56,7 @@ const Menu = styled.div`
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const darkTheme = useContext(ThemeContext);
   const linksCounter = [
     { id: 1, href: "/", value: "Home" },
     { id: 2, href: "/about", value: "About" },
@@ -84,7 +85,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <NavContainer>
+    <NavContainer darkTheme={darkTheme}>
       <Logo></Logo>
       <Hamburger
         onClick={() => {

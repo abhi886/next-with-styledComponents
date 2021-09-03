@@ -1,17 +1,23 @@
+import React, { useContext } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { useState } from "react";
+
+import { ThemeContext } from "../../../pages/_app";
+
 import styled from "styled-components";
 
 function ActiveLink({ children, href, linkClick }) {
   const router = useRouter();
+  const darkTheme = useContext(ThemeContext);
+
   const style = {
     textColor: router.asPath === href ? "var(--primary-orange)" : "",
     borderBottom:
       router.asPath === href ? "0.1875rem solid var(--primary-orange)" : "",
   };
   return (
-    <MenuLink onClick={linkClick} style={style}>
+    <MenuLink darkTheme={darkTheme} onClick={linkClick} style={style}>
       <Link href={href}>{children}</Link>
     </MenuLink>
   );
@@ -32,7 +38,7 @@ const MenuLink = styled.div`
 
     text-transform: uppercase;
 
-    color: black;
+    color: ${({ darkTheme }) => (darkTheme === true ? "white" : "black")};
     transition: all 0.2s ease-in-out;
     font-size: 0.9 rem;
     font-weight: 900;
