@@ -12,7 +12,9 @@ export default function App({ Component, pageProps }) {
     setDarkTheme((prevDarkTheme) => !prevDarkTheme);
   }
   return (
-    <ThemeContext.Provider value={darkTheme}>
+    <ThemeContext.Provider
+      value={{ state: darkTheme, ontoggleTheme: toggleTheme }}
+    >
       <MasterLayout>
         <GlobalStyle></GlobalStyle>
         <Component {...pageProps} />

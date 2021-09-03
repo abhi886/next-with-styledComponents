@@ -54,9 +54,12 @@ const Menu = styled.div`
   }
 `;
 
+const NightTheme = styled.div``;
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const darkTheme = useContext(ThemeContext);
+  const { state: darkTheme, ontoggleTheme } = useContext(ThemeContext);
+
   const linksCounter = [
     { id: 1, href: "/", value: "Home" },
     { id: 2, href: "/about", value: "About" },
@@ -104,6 +107,9 @@ const Navbar = () => {
           </ActiveLink>
         ))}
       </Menu>
+      <NightTheme>
+        <button onClick={ontoggleTheme}>NV</button>{" "}
+      </NightTheme>
     </NavContainer>
   );
 };

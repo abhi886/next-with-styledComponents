@@ -9,7 +9,7 @@ import styled from "styled-components";
 
 function ActiveLink({ children, href, linkClick }) {
   const router = useRouter();
-  const darkTheme = useContext(ThemeContext);
+  const { state: darkTheme } = useContext(ThemeContext);
 
   const style = {
     textColor: router.asPath === href ? "var(--primary-orange)" : "",
