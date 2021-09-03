@@ -1,14 +1,22 @@
-import Button from "../src/components/shared/TestButton";
-import Images from "../src/components/shared/Images";
-import img from "../public/Blog_Logo.jpg";
+import styled from "styled-components";
+import { Container } from "react-bootstrap";
+
+const ContactContainer = styled(Container)`
+  flex-direction: row;
+`;
+const ContactWrapper = styled.div`
+  height: 100vh;
+  margin-top: 100px;
+`;
+const ContactTitle = styled.h3``;
 
 const Contact = () => {
   return (
-    <>
-      <Button color='orange'>This is button Test</Button>
-      <Button color='black'>This is button Test</Button>
-      <Images source={img} width={300} height={300}></Images>
-    </>
+    <ContactContainer>
+      <ContactWrapper>
+        <ContactTitle> Contact:-) Content Coming Soon !!!! </ContactTitle>
+      </ContactWrapper>
+    </ContactContainer>
   );
 };
 

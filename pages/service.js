@@ -1,5 +1,23 @@
-const Service = () => {
-  return <p>This is the Service Section</p>;
+import styled from "styled-components";
+import { Container } from "react-bootstrap";
+
+const ServicesContainer = styled(Container)`
+  flex-direction: row;
+`;
+const ServicesWrapper = styled.div`
+  height: 100vh;
+  margin-top: 100px;
+`;
+const ServicesTitle = styled.h3``;
+
+const Services = () => {
+  return (
+    <ServicesContainer>
+      <ServicesWrapper>
+        <ServicesTitle> Services:-) Content Coming Soon !!!! </ServicesTitle>
+      </ServicesWrapper>
+    </ServicesContainer>
+  );
 };
 
-export default Service;
+export default Services;

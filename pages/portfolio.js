@@ -1,10 +1,23 @@
-import { getAllBlogIds } from "../src/lib/blog";
-const Portfolio = () => {
-  const paths = [{ params: { id: "1" } }, { params: { id: "2" } }];
-  console.log(paths);
-  console.log(getAllBlogIds());
+import styled from "styled-components";
+import { Container } from "react-bootstrap";
 
-  return <p>This is the Portfolio Section</p>;
+const PortfolioContainer = styled(Container)`
+  flex-direction: row;
+`;
+const PortfolioWrapper = styled.div`
+  height: 100vh;
+  margin-top: 100px;
+`;
+const PortfolioTitle = styled.h3``;
+
+const Portfolio = () => {
+  return (
+    <PortfolioContainer>
+      <PortfolioWrapper>
+        <PortfolioTitle> Portfolio:-) Content Coming Soon !!!! </PortfolioTitle>
+      </PortfolioWrapper>
+    </PortfolioContainer>
+  );
 };
 
 export default Portfolio;

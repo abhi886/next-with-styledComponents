@@ -1,25 +1,26 @@
-import { experience } from "../../src/data/experience";
+import styled from "styled-components";
+import { Container } from "react-bootstrap";
 
-const Experience = (exp) => {
-  console.log(exp);
+const ExperienceContainer = styled(Container)`
+  flex-direction: row;
+`;
+const ExperienceWrapper = styled.div`
+  height: 100vh;
+  margin-top: 100px;
+`;
+const ExperienceTitle = styled.h3``;
+
+const Experience = () => {
   return (
-    <div>
-      <ul>
-        {exp.exp.map((ex) => (
-          <li key={ex.id}>{ex.id}</li>
-        ))}
-      </ul>
-    </div>
+    <ExperienceContainer>
+      <ExperienceWrapper>
+        <ExperienceTitle>
+          {" "}
+          Experience - Content Coming Soon !!!!{" "}
+        </ExperienceTitle>
+      </ExperienceWrapper>
+    </ExperienceContainer>
   );
 };
-
-export async function getStaticProps() {
-  const exp = experience;
-  return {
-    props: {
-      exp,
-    },
-  };
-}
 
 export default Experience;
