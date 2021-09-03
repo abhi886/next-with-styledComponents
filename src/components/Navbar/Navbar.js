@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
+import React from "react";
 
 import styled from "styled-components";
 import ActiveLink from "../shared/ActiveLink";
@@ -54,6 +55,7 @@ const Menu = styled.div`
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
   const linksCounter = [
     { id: 1, href: "/", value: "Home" },
     { id: 2, href: "/about", value: "About" },
@@ -67,6 +69,19 @@ const Navbar = () => {
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
+
+  const handleResize = () => {
+    if (window.innerWidth == 920) {
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <NavContainer>
