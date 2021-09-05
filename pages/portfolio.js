@@ -14,7 +14,7 @@ const Portfolio = () => {
   return (
     <PortfolioContainer>
       <PortfolioWrapper>
-        <PortfolioTitle> Portfolio:-) Content Coming Soon !!!! </PortfolioTitle>
+        <PortfolioTitle> Portfolio </PortfolioTitle>
       </PortfolioWrapper>
     </PortfolioContainer>
   );

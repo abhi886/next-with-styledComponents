@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders homepage unchanged 1`] = `
+<div
+  className="portfolio__PortfolioContainer-sc-u8dw1z-0 dkOTxm container"
+>
+  <div
+    className="portfolio__PortfolioWrapper-sc-u8dw1z-1 iTieSi"
+  >
+    <h3
+      className="portfolio__PortfolioTitle-sc-u8dw1z-2"
+    >
+       Portfolio:-) Content Coming Soon !!!! 
+    </h3>
+  </div>
+</div>
+`;
